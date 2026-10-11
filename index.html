@@ -1,0 +1,378 @@
+<title>Crónicas de Matías</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap">
+
+<style>
+/* Layout: portada de revista literaria — columna central, fondo oscuro de papel envejecido */
+
+:root {
+  --bg: #2a1f17;
+  --bg2: #1e1510;
+  --fg: #f0e8dc;
+  --fg2: #c9b99e;
+  --muted: #8a7868;
+  --accent: #d4613a;
+  --accent2: #e8845c;
+  --rule: #3d2d22;
+  --card: #321f15;
+  --card-border: #4a3025;
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #2a1f17;
+    --bg2: #1e1510;
+    --fg: #f0e8dc;
+    --fg2: #c9b99e;
+    --muted: #8a7868;
+    --accent: #d4613a;
+    --accent2: #e8845c;
+    --rule: #3d2d22;
+    --card: #321f15;
+    --card-border: #4a3025;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #2a1f17;
+  --bg2: #1e1510;
+  --fg: #f0e8dc;
+  --fg2: #c9b99e;
+  --muted: #8a7868;
+  --accent: #d4613a;
+  --accent2: #e8845c;
+  --rule: #3d2d22;
+  --card: #321f15;
+  --card-border: #4a3025;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding-inline: 20px;
+  padding-block: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Source Serif 4', Georgia, serif;
+  line-height: 1.7;
+}
+
+/* ── HEADER ─────────────────────────────────── */
+header {
+  max-width: 860px;
+  margin: 0 auto;
+  padding-block: 3.5rem 2rem;
+  text-align: center;
+  border-bottom: 1px solid var(--rule);
+}
+
+.masthead-rule {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+.masthead-rule::before,
+.masthead-rule::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--accent);
+}
+.masthead-label {
+  font-family: 'Source Serif 4', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+h1.site-title {
+  font-family: 'Playfair Display', 'Times New Roman', serif;
+  font-size: clamp(2.8rem, 9vw, 5.2rem);
+  font-weight: 900;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+  margin: 0 0 1rem;
+  text-wrap: balance;
+}
+
+.site-tagline {
+  font-size: 1rem;
+  color: var(--muted);
+  font-style: italic;
+  margin: 0;
+  max-width: 48ch;
+  margin-inline: auto;
+}
+
+/* ── MAIN CONTENT ───────────────────────────── */
+main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding-block: 3rem 2rem;
+}
+
+.section-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+.section-intro {
+  font-size: 0.95rem;
+  color: var(--fg2);
+  font-style: italic;
+  margin: -0.8rem 0 1.8rem;
+  max-width: 60ch;
+}
+
+/* ── CHRONICLES GRID ────────────────────────── */
+.chronicles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.chronicle-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  padding: 1.8rem;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  position: relative;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.chronicle-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px;
+  height: 0;
+  background: var(--accent);
+  transition: height 0.25s ease;
+}
+
+.chronicle-card:hover {
+  border-color: var(--accent2);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.09);
+}
+.chronicle-card:hover::before {
+  height: 100%;
+}
+.chronicle-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.card-kicker {
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-family: 'Source Serif 4', serif;
+}
+
+.card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--fg);
+  text-wrap: balance;
+}
+
+.card-desc {
+  font-size: 0.9rem;
+  color: var(--fg2);
+  line-height: 1.55;
+  flex: 1;
+}
+
+.card-cta {
+  font-size: 0.78rem;
+  color: var(--accent2);
+  letter-spacing: 0.06em;
+  margin-top: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.card-cta::after {
+  content: '→';
+  transition: transform 0.2s;
+}
+.chronicle-card:hover .card-cta::after {
+  transform: translateX(4px);
+}
+
+/* ── ABOUT ──────────────────────────────────── */
+.about-block {
+  border-top: 1px solid var(--rule);
+  padding-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.about-text {
+  max-width: 58ch;
+  color: var(--fg2);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+/* ── FOOTER ─────────────────────────────────── */
+footer {
+  background: var(--bg2);
+  border-top: 1px solid var(--rule);
+  padding-block: 2.5rem;
+  padding-inline: 20px;
+}
+
+.footer-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  text-align: center;
+}
+
+.footer-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--fg);
+}
+
+.footer-copy {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid var(--card-border);
+  color: var(--fg2);
+  text-decoration: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  transition: border-color 0.2s, color 0.2s;
+}
+.social-link:hover {
+  border-color: var(--accent2);
+  color: var(--accent2);
+}
+.social-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ── RESPONSIVE ─────────────────────────────── */
+@media (max-width: 600px) {
+  header { padding-block: 2.2rem 1.5rem; }
+  .chronicles { grid-template-columns: 1fr; }
+  .chronicle-card { padding: 1.4rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chronicle-card, .chronicle-card::before, .card-cta::after {
+    transition: none;
+  }
+}
+</style>
+
+<!-- HEADER -->
+<header>
+  <div class="masthead-rule">
+    <span class="masthead-label">Investigación ferroviaria · Chile</span>
+  </div>
+  <h1 class="site-title">Crónicas de Matías</h1>
+  <p class="site-tagline">Estudios sobre la historia ferroviaria chilena: ramales olvidados, trenes extintos y el territorio que dejaron atrás.</p>
+</header>
+
+<!-- MAIN -->
+<main>
+  <div class="section-label">Crónicas publicadas</div>
+
+  <div class="chronicles">
+
+    <a class="chronicle-card" href="https://claude.ai/artifact/4MkaEtBSSnRfWBmXEDFVi8" target="_blank" rel="noopener">
+      <span class="card-kicker">Ramal Linares–Colbún</span>
+      <span class="card-title">El Tren Chico de Panimávida</span>
+      <p class="card-desc">Historia del ramal que conectó Linares con Panimávida y Colbún, atravesando el secano interior del Maule. Un ferrocarril menor con un rol territorial mayor de lo que su tamaño sugería.</p>
+      <span class="card-cta">Leer crónica</span>
+    </a>
+
+    <a class="chronicle-card" href="https://claude.ai/artifact/G9dDJFamDHNJ2WsFLV3hHf" target="_blank" rel="noopener">
+      <span class="card-kicker">Ramal Parral–Cauquenes</span>
+      <span class="card-title">El Tren hacia el Oeste</span>
+      <p class="card-desc">Reconstrucción del ramal Parral–Cauquenes, 49 km de vía ancha que articularon el Maule Sur con la Red Central. Un puente patrimonial, estaciones supervivientes y el debate sobre su posible recuperación.</p>
+      <span class="card-cta">Leer crónica</span>
+    </a>
+
+    <a class="chronicle-card" href="https://claude.ai/artifact/MgJVrLkDhSLheEmCqF56QV" target="_blank" rel="noopener">
+      <span class="card-kicker">Ramal Curicó–Licantén</span>
+      <span class="card-title">El Tren de la Costa</span>
+      <p class="card-desc">El ramal que bajó desde Curicó hacia el litoral del Maule, sirviendo a Hualañé, Iloca y Licantén. Una línea costera cuya huella persiste en el territorio décadas después de su clausura.</p>
+      <span class="card-cta">Leer crónica</span>
+    </a>
+
+    <a class="chronicle-card" href="https://claude.ai/artifact/1iXAfqcTxJasdKj11arxXy" target="_blank" rel="noopener">
+      <span class="card-kicker">Automotores Flecha</span>
+      <span class="card-title">La Flecha del Sur</span>
+      <p class="card-desc">Historia y legado de los automotores Flecha que recorrieron la red ferroviaria chilena. Un estudio sobre la modernización del material rodante y los trenes que marcaron el imaginario del viaje en el siglo XX.</p>
+      <span class="card-cta">Leer crónica</span>
+    </a>
+
+  </div>
+
+  <div class="about-block">
+    <p class="about-text">Este sitio reúne investigaciones sobre la historia material de Chile: ferrocarriles, industrias y la infraestructura que articuló el territorio. Cada crónica es un trabajo de reconstrucción histórica a partir de documentos, planos, fotografías y testimonios.</p>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">Crónicas de Matías</div>
+
+    <!-- Redes sociales — reemplaza # con tus URLs reales -->
+    <div class="social-links">
+      <a class="social-link" href="https://www.instagram.com/mat_ibrp/" target="_blank" rel="noopener">Instagram · @mat_ibrp</a>
+      <a class="social-link" href="mailto:Holysheep302@gmail.com">✉ Holysheep302@gmail.com</a>
+    </div>
+
+    <p class="footer-copy">Creado y administrado por Matías Bravo Ponce · 2026</p>
+  </div>
+</footer>
