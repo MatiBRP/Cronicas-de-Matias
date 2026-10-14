@@ -1,235 +1,235 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>El Flecha del Sur — Historia y legado de los automotores Flecha</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --paper: #E7DCC0;
-    --paper-dark: #DACBA4;
-    --ink: #2B2318;
-    --ink-soft: #4A3F30;
-    --rust: #A23D2A;
-    --rust-dark: #7C2C1E;
-    --teal: #2C5652;
-    --gold: #B8862E;
-    --line: rgba(43,35,24,0.22);
-    --paper-shadow: rgba(43,35,24,0.18);
-  }
-
-  *{ box-sizing: border-box; }
-
-  html, body{
-    margin:0; padding:0;
-    background: var(--ink);
-  }
-
-  body{
-    font-family:'Source Serif 4', serif;
-    color: var(--ink);
-    line-height: 1.7;
-  }
-
-  ::selection{ background: var(--rust); color: var(--paper); }
-
-  .sheet{
-    max-width: 920px;
-    margin: 0 auto;
-    background: var(--paper);
-    background-image:
-      radial-gradient(ellipse at top left, rgba(255,255,255,0.35), transparent 55%),
-      radial-gradient(ellipse at bottom right, rgba(0,0,0,0.06), transparent 60%);
-    box-shadow: 0 0 80px rgba(0,0,0,0.55);
-  }
-
-  /* ---------- HERO ---------- */
-  .hero{
-    position: relative;
-    padding: 4.5rem 5vw 3rem;
-    border-bottom: 3px solid var(--ink);
-    overflow: hidden;
-  }
-  .hero::before{
-    content:"";
-    position:absolute; inset:0;
-    background:
-      repeating-linear-gradient(135deg, rgba(43,35,24,0.035) 0 2px, transparent 2px 14px);
-    pointer-events:none;
-  }
-  .hero-eyebrow{
-    font-family:'Oswald', sans-serif;
-    font-weight:600;
-    font-size: 0.78rem;
-    letter-spacing: 0.14em;
-    color: var(--rust-dark);
-    display:flex;
-    align-items:center;
-    gap: 0.6rem;
-    margin-bottom: 1.6rem;
-  }
-  .hero-eyebrow .rule{
-    width: 40px; height: 2px; background: var(--rust-dark);
-  }
-  .hero-title{
-    font-family:'Oswald', sans-serif;
-    font-weight: 700;
-    font-size: clamp(2.6rem, 7vw, 4.6rem);
-    line-height: 0.98;
-    letter-spacing: -0.01em;
-    margin: 0 0 1.1rem;
-    color: var(--ink);
-  }
-  .hero-title span{ color: var(--rust); }
-  .hero-sub{
-    font-size: 1.18rem;
-    max-width: 46ch;
-    color: var(--ink-soft);
-    font-style: italic;
-    margin: 0 0 2.2rem;
-  }
-  .hero-meta{
-    display:flex; flex-wrap:wrap; gap: 1.8rem;
-    font-family:'Oswald', sans-serif;
-    font-size: 0.82rem;
-    color: var(--ink-soft);
-    border-top: 1px solid var(--line);
-    padding-top: 1.2rem;
-  }
-  .hero-meta b{ color: var(--ink); display:block; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:0.15rem;}
-
-  .hero-figure{
-    margin-top: 2.6rem;
-    position: relative;
-  }
-  .hero-figure img{
-    width: 100%;
-    display:block;
-    border: 2px solid var(--ink);
-  }
-  .plate-caption{
-    font-family:'Oswald', sans-serif;
-    font-size: 0.74rem;
-    letter-spacing: 0.04em;
-    color: var(--ink-soft);
-    margin-top: 0.6rem;
-    display:flex;
-    justify-content: space-between;
-    gap:1rem;
-  }
-  .plate-caption .num{ color: var(--rust-dark); font-weight:600; white-space:nowrap;}
-
-  /* ---------- TICKET DIVIDER ---------- */
-  .ticket-divider{
-    display:flex; align-items:center; gap: 1rem;
-    padding: 0 5vw;
-    margin: 0;
-    color: var(--rust-dark);
-  }
-  .ticket-divider .dash{
-    flex:1; height:0;
-    border-top: 2px dashed var(--line);
-  }
-  .ticket-divider .mark{
-    font-family:'Oswald', sans-serif;
-    font-size: 0.75rem;
-    letter-spacing: 0.18em;
-  }
-
-  /* ---------- SECTIONS ---------- */
-  .section{
-    padding: 3.4rem 5vw;
-    border-bottom: 1px solid var(--line);
-  }
-  .section-head{
-    display:flex;
-    align-items: baseline;
-    gap: 1rem;
-    margin-bottom: 1.6rem;
-  }
-  .section-num{
-    font-family:'Oswald', sans-serif;
-    font-size: 0.85rem;
-    font-weight:600;
-    color: var(--paper);
-    background: var(--rust);
-    padding: 0.25rem 0.6rem;
-    letter-spacing: 0.06em;
-  }
-  .section-title{
-    font-family:'Oswald', sans-serif;
-    font-weight:600;
-    font-size: 1.7rem;
-    margin:0;
-    color: var(--ink);
-  }
-
-  .col-text{
-    max-width: 68ch;
-  }
-  .col-text p{ margin: 0 0 1.15rem; font-size: 1.04rem; }
-  .col-text p:last-child{ margin-bottom:0; }
-
-  .lede{
-    font-size: 1.18rem;
-    color: var(--ink-soft);
-  }
-  .lede::first-letter{
-    font-family:'Oswald', sans-serif;
-    font-size: 3.4rem;
-    font-weight: 700;
-    float:left;
-    line-height: 0.8;
-    margin: 0.06em 0.08em 0 0;
-    color: var(--rust);
-  }
-
-  .layout-with-figure{
-    display:grid;
-    grid-template-columns: 1.3fr 1fr;
-    gap: 2.4rem;
-    align-items: stretch;
-  }
-  .layout-with-figure > figure{
-    display:flex;
-    flex-direction:column;
-    height:100%;
-  }
-  .layout-with-figure > figure img{
-    flex:1 1 auto;
-    min-height:0;
-    object-fit:cover;
-    object-position:center;
-  }
-  .layout-with-figure > figure .plate-caption{
-    flex:0 0 auto;
-  }
-  @media print{
-    .layout-with-figure > figure img{
-      object-fit:contain;
+              <!DOCTYPE html>
+              <html lang="es">
+              <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>El Flecha del Sur — Historia y legado de los automotores Flecha</title>
+              <link rel="preconnect" href="https://fonts.googleapis.com">
+              <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+              <style>
+                :root{
+                  --paper: #E7DCC0;
+                  --paper-dark: #DACBA4;
+                  --ink: #2B2318;
+                  --ink-soft: #4A3F30;
+                  --rust: #A23D2A;
+                  --rust-dark: #7C2C1E;
+                  --teal: #2C5652;
+                  --gold: #B8862E;
+                  --line: rgba(43,35,24,0.22);
+                  --paper-shadow: rgba(43,35,24,0.18);
+                }
+              
+                *{ box-sizing: border-box; }
+              
+                html, body{
+                  margin:0; padding:0;
+                  background: var(--ink);
+                }
+              
+                body{
+                  font-family:'Source Serif 4', serif;
+                  color: var(--ink);
+                  line-height: 1.7;
+                }
+              
+                ::selection{ background: var(--rust); color: var(--paper); }
+              
+                .sheet{
+                  max-width: 920px;
+                  margin: 0 auto;
+                  background: var(--paper);
+                  background-image:
+                    radial-gradient(ellipse at top left, rgba(255,255,255,0.35), transparent 55%),
+                    radial-gradient(ellipse at bottom right, rgba(0,0,0,0.06), transparent 60%);
+                  box-shadow: 0 0 80px rgba(0,0,0,0.55);
+                }
+              
+                /* ---------- HERO ---------- */
+                .hero{
+                  position: relative;
+                  padding: 4.5rem 5vw 3rem;
+                  border-bottom: 3px solid var(--ink);
+                  overflow: hidden;
+                }
+                .hero::before{
+                  content:"";
+                  position:absolute; inset:0;
+                  background:
+                    repeating-linear-gradient(135deg, rgba(43,35,24,0.035) 0 2px, transparent 2px 14px);
+                  pointer-events:none;
+                }
+                .hero-eyebrow{
+                  font-family:'Oswald', sans-serif;
+                  font-weight:600;
+                  font-size: 0.78rem;
+                  letter-spacing: 0.14em;
+                  color: var(--rust-dark);
+                  display:flex;
+                  align-items:center;
+                  gap: 0.6rem;
+                  margin-bottom: 1.6rem;
+                }
+                .hero-eyebrow .rule{
+                  width: 40px; height: 2px; background: var(--rust-dark);
+                }
+                .hero-title{
+                  font-family:'Oswald', sans-serif;
+                  font-weight: 700;
+                  font-size: clamp(2.6rem, 7vw, 4.6rem);
+                  line-height: 0.98;
+                  letter-spacing: -0.01em;
+                  margin: 0 0 1.1rem;
+                  color: var(--ink);
+                }
+                .hero-title span{ color: var(--rust); }
+                .hero-sub{
+                  font-size: 1.18rem;
+                  max-width: 46ch;
+                  color: var(--ink-soft);
+                  font-style: italic;
+                  margin: 0 0 2.2rem;
+                }
+                .hero-meta{
+                  display:flex; flex-wrap:wrap; gap: 1.8rem;
+                  font-family:'Oswald', sans-serif;
+                  font-size: 0.82rem;
+                  color: var(--ink-soft);
+                  border-top: 1px solid var(--line);
+                  padding-top: 1.2rem;
+                }
+                .hero-meta b{ color: var(--ink); display:block; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:0.15rem;}
+              
+                .hero-figure{
+                  margin-top: 2.6rem;
+                  position: relative;
+                }
+                .hero-figure img{
+                  width: 100%;
+                  display:block;
+                  border: 2px solid var(--ink);
+                }
+                .plate-caption{
+                  font-family:'Oswald', sans-serif;
+                  font-size: 0.74rem;
+                  letter-spacing: 0.04em;
+                  color: var(--ink-soft);
+                  margin-top: 0.6rem;
+                  display:flex;
+                  justify-content: space-between;
+                  gap:1rem;
+                }
+                .plate-caption .num{ color: var(--rust-dark); font-weight:600; white-space:nowrap;}
+              
+                /* ---------- TICKET DIVIDER ---------- */
+                .ticket-divider{
+                  display:flex; align-items:center; gap: 1rem;
+                  padding: 0 5vw;
+                  margin: 0;
+                  color: var(--rust-dark);
+                }
+                .ticket-divider .dash{
+                  flex:1; height:0;
+                  border-top: 2px dashed var(--line);
+                }
+                .ticket-divider .mark{
+                  font-family:'Oswald', sans-serif;
+                  font-size: 0.75rem;
+                  letter-spacing: 0.18em;
+                }
+              
+                /* ---------- SECTIONS ---------- */
+                .section{
+                  padding: 3.4rem 5vw;
+                  border-bottom: 1px solid var(--line);
+                }
+                .section-head{
+                  display:flex;
+                  align-items: baseline;
+                  gap: 1rem;
+                  margin-bottom: 1.6rem;
+                }
+                .section-num{
+                  font-family:'Oswald', sans-serif;
+                  font-size: 0.85rem;
+                  font-weight:600;
+                  color: var(--paper);
+                  background: var(--rust);
+                  padding: 0.25rem 0.6rem;
+                  letter-spacing: 0.06em;
+                }
+                .section-title{
+                  font-family:'Oswald', sans-serif;
+                  font-weight:600;
+                  font-size: 1.7rem;
+                  margin:0;
+                  color: var(--ink);
+                }
+              
+                .col-text{
+                  max-width: 68ch;
+                }
+                .col-text p{ margin: 0 0 1.15rem; font-size: 1.04rem; }
+                .col-text p:last-child{ margin-bottom:0; }
+              
+                .lede{
+                  font-size: 1.18rem;
+                  color: var(--ink-soft);
+                }
+                .lede::first-letter{
+                  font-family:'Oswald', sans-serif;
+                  font-size: 3.4rem;
+                  font-weight: 700;
+                  float:left;
+                  line-height: 0.8;
+                  margin: 0.06em 0.08em 0 0;
+                  color: var(--rust);
+                }
+              
+                .layout-with-figure{
+                  display:grid;
+                  grid-template-columns: 1.3fr 1fr;
+                  gap: 2.4rem;
+                  align-items: stretch;
+                }
+                .layout-with-figure > figure{
+                  display:flex;
+                  flex-direction:column;
+                  height:100%;
+                }
+                .layout-with-figure > figure img{
+                  flex:1 1 auto;
+                  min-height:0;
+                  object-fit:cover;
+                  object-position:center;
+                }
+                .layout-with-figure > figure .plate-caption{
+                  flex:0 0 auto;
+                }
+                @media print{
+                  .layout-with-figure > figure img{
+                    object-fit:contain;
+                  }
+                }
+              
+                @media (max-width: 720px){
+                  .layout-with-figure{ grid-template-columns: 1fr; }
+              }
+            
+              figure{ margin:0; }
+              figure img{
+              width:100%; display:block;
+              border: 2px solid var(--ink);
+          }
+        
+          .fact-box{
+            background: var(--paper-dark);
+          border: 1px solid var(--line);
+          border-left: 4px solid var(--teal);
+          padding: 1.2rem 1.3rem;
+          font-family:'Oswald', sans-serif;
     }
-  }
-
-  @media (max-width: 720px){
-    .layout-with-figure{ grid-template-columns: 1fr; }
-  }
-
-  figure{ margin:0; }
-  figure img{
-    width:100%; display:block;
-    border: 2px solid var(--ink);
-  }
-
-  .fact-box{
-    background: var(--paper-dark);
-    border: 1px solid var(--line);
-    border-left: 4px solid var(--teal);
-    padding: 1.2rem 1.3rem;
-    font-family:'Oswald', sans-serif;
-  }
-  .fact-box h4{
+    .fact-box h4{
     margin: 0 0 0.7rem;
     font-size: 0.78rem;
     letter-spacing: 0.1em;
