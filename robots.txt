@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://matibrp.github.io/Cronicas-de-Matias/sitemap.xml
